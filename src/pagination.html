@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Реалізація пагінації</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <header class="nav">
+    <button class="nav__toggle">☰ Меню</button>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+      <li class="nav__item"><a href="async-basics.html" class="nav__link">Основи async/await</a></li>
+      <li class="nav__item"><a href="http-requests.html" class="nav__link">Робота з HTTP-запитами</a></li>
+      <li class="nav__item"><a href="pagination.html" class="nav__link">Реалізація пагінації</a></li>
+      <li class="nav__item"><a href="extra-task.html" class="nav__link">Додаткове завдання</a></li>
+    </ul>
+  </header>
+
+  <div class="content">
+    <h1>Завдання 3. Реалізація пагінації</h1>
+  </div>
+  <div class="container">
+    <h2>Пости</h2>
+    <div class="controls">
+      <button id="loadMorePostsButton">Завантажити ще</button>
+    </div>
+    <div id="postContainer" class="post-container"></div>
+  </div>
+
+
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/pagination.js"></script>
+</body>
+
+</html>
