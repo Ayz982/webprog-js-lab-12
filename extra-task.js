@@ -1,4 +1,4 @@
-import"./assets/main-DdADOyK2.js";let s=1;const r=5;async function c(t,o){try{const n=await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${t}&_limit=${o}`);if(!n.ok)throw new Error(`HTTP Помилка: ${n.status}`);return await n.json()}catch(n){return console.error("Помилка завантаження постів:",n),[]}}async function i(t){const o=document.getElementById("postContainer");t.forEach(n=>{const e=document.createElement("div");e.classList.add("post"),e.innerHTML=`
+import"./assets/main-gqJBNxDG.js";let s=1;const r=5;async function c(t,o){try{const n=await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${t}&_limit=${o}`);if(!n.ok)throw new Error(`HTTP Помилка: ${n.status}`);return await n.json()}catch(n){return console.error("Помилка завантаження постів:",n),[]}}async function i(t){const o=document.getElementById("postContainer");t.forEach(n=>{const e=document.createElement("div");e.classList.add("post"),e.innerHTML=`
             <h2>${n.title}</h2>
             <p>${n.body}</p>
             <button class="button show-comments" data-post-id="${n.id}">Показати коментарі</button>
