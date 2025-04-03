@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Додаткове завдання</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/webprog-js-lab-12/extra-task.js"></script>
+  <link rel="modulepreload" crossorigin href="/webprog-js-lab-12/assets/main-DdADOyK2.js">
+  <link rel="stylesheet" crossorigin href="/webprog-js-lab-12/assets/main-_RuITI2C.css">
+</head>
+
+<body>
+  <header class="nav">
+    <button class="nav__toggle">☰ Меню</button>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+      <li class="nav__item"><a href="async-basics.html" class="nav__link">Основи async/await</a></li>
+      <li class="nav__item"><a href="http-requests.html" class="nav__link">Робота з HTTP-запитами</a></li>
+      <li class="nav__item"><a href="pagination.html" class="nav__link">Реалізація пагінації</a></li>
+      <li class="nav__item"><a href="extra-task.html" class="nav__link">Додаткове завдання</a></li>
+    </ul>
+  </header>
+
+  <div class="content">
+    <h1>Додаткове завдання</h1>
+  </div>
+  <div class="container">
+    <h2>Пости</h2>
+    <div class="controls">
+      <button id="refreshPostsButton">Оновити пости</button>
+      <button id="loadMorePostsButton">Завантажити ще</button>
+    </div>
+    <div id="postContainer" class="post-container"></div>
+
+    <div id="photoContainer" class="photo-container">
+      <h2>Фотографії</h2>
+      <button id="loadPhotosButton">Завантажити фото</button>
+      <div id="photos"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
