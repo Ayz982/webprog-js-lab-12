@@ -1,4 +1,4 @@
-export async function getUsers() { 
+async function getUsers() { 
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
         const users = await response.json();
@@ -18,7 +18,7 @@ export async function getUsers() {
     }
 }
 
-export function hideUsers() {
+function hideUsers() {
     document.getElementById('usersList').innerHTML = '';
 }
 
@@ -35,7 +35,7 @@ async function fetchUserById(id) {
     }
 }
 
-export async function fetchUser() {
+ async function fetchUser() {
     const id = document.getElementById('userId').value;
     const messageBox = document.getElementById('messageBox');
     const resultBox = document.getElementById('userResult');
