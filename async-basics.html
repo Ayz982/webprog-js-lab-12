@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Основи async/await</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/webprog-js-lab-12/async-basics.js"></script>
-  <link rel="modulepreload" crossorigin href="/webprog-js-lab-12/assets/main-oNcp2u-y.js">
+  <script type="module" crossorigin src="/webprog-js-lab-12/assets/main-oNcp2u-y.js"></script>
   <link rel="stylesheet" crossorigin href="/webprog-js-lab-12/assets/main-_RuITI2C.css">
 </head>
 
@@ -30,15 +29,15 @@
   <div class="container">
     <h2>Fetch Number</h2>
     <div class="controls">
-        <label for="result-type">Виберіть результат:</label>
-        <select id="result-type">
-            <option value="success">Успіх</option>
-            <option value="error">Помилка</option>
-        </select>
-        <button id="fetch-button">Отримати число</button>
+      <label for="result-type">Виберіть результат:</label>
+      <select id="result-type">
+        <option value="success">Успіх</option>
+        <option value="error">Помилка</option>
+      </select>
+      <button id="fetch-button">Отримати число</button>
     </div>
     <div id="output" class="output"></div>
-</div>
+  </div>
 
 
   <h2>Консольний варіант виконання</h2>
@@ -63,7 +62,38 @@ async function main() {
         </code></pre>
   </div>
 
-
+
+  <script>
+    function fetchNumber(shouldFail = false) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (shouldFail) {
+            reject(new Error('Не вдалося отримати число'));
+          } else {
+            resolve(9);
+          }
+        }, 2000);
+      });
+    }
+
+    async function getNumber(shouldFail = false) {
+      const outputElement = document.querySelector('#output');
+      outputElement.innerHTML = 'Зачекайте...';
+      try {
+        const number = await fetchNumber(shouldFail);
+        outputElement.innerHTML = `Отримане число: <strong>${number}</strong>`;
+      } catch (error) {
+        outputElement.innerHTML = `<span class="error">Помилка: ${error.message}</span>`;
+      }
+    }
+
+    const fetchButton = document.querySelector('#fetch-button');
+    fetchButton.addEventListener('click', () => {
+      const resultType = document.querySelector('#result-type').value;
+      const shouldFail = resultType === 'error';
+      getNumber(shouldFail);
+    });
+  </script>
 </body>
 
 </html>
